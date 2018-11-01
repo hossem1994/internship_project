@@ -1,0 +1,37 @@
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'fiware-service: test' --header 'fiware-servicepath: /garden' -d '{
+  "devices": [
+  {
+    "device_id": "iot",
+    "entity_name": "IOT",
+    "entity_type": "LoraDevice",
+    "attributes": [
+
+      {
+      
+        "name": "temperature_1",
+        "type": "Number"
+      },
+
+            {
+            
+              "name": "relative_humidity_2",
+              "type": "Number"
+            }
+    ],
+    "internal_attributes": {
+      "lorawan": {
+        "application_server": {
+          "host": "52.211.195.35",
+          "provider": "loraserver.io"
+        },
+        "dev_eui": "1234567891234569",
+        "app_eui": "4569343567897875",
+        "application_id": "3",
+        "application_key": "6b6095f0947cb324536974ce54dad4ca",
+        "data_model": "cayennelpp"
+
+      }
+    }
+  }
+  ]
+}' 'http://localhost:4061/iot/devices'
